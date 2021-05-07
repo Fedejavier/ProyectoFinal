@@ -8,4 +8,9 @@ public class Bienvenida extends JFrame Implements ActionListener{
     private JLabel label1, label2, label3, label4;
     private JButton boton1;
     
+    public Bienvenida(){
+
+        setLayout();
+        
+    }
 }
