@@ -113,16 +113,126 @@ public class Principal extends JFrame implements ActionListener{
 
         txtNombreTrabajador = new JTextField();
         txtNombreTrabajador.setBounds(25,213,150,25);
-        txtNombreTrabajador.setBackground(new java.awt.color(224,224,224));
-        txtNombreTrabajador.setFont(new java.awt.font("Andale MOno",1,14));
-        txtNombreTrabajador.setForeground(new java.awt.color(255,0,0));
+        txtNombreTrabajador.setBackground(new java.awt.Color(224,224,224));
+        txtNombreTrabajador.setFont(new java.awt.Font("Andale Mono",1,14));
+        txtNombreTrabajador.setForeground(new java.awt.Color(255,0,0));
         add(txtNombreTrabajador);
         
+        labelAPaterno = new JLabel("Apellido Paterno");
+        labelAPaterno.setBounds(25,248,180,25);
+        labelAPaterno.setFont(new Font("Andale Mono",1,12));
+        labelAPaterno.setForeground(new Color(255,0,0));
+        add(labelAPaterno);
+
+        txtAPaterno = new JTextField();
+        txtAPaterno.setBounds(25,273,150,25);
+        txtAPaterno.setBackground(new java.awt.Color(224,224,224));
+        txtAPaterno.setFont(new java.awt.Font("Andale Mono",1,14));
+        txtAPaterno.setForeground(new java.awt.Color(255,0,0));
+        add(txtAPaterno);
+
+        labelAMaterno = new JLabel("Apellido Materno");
+        labelAMaterno.setBounds(25,308,180,25);
+        labelAMaterno.setFont(new Font("Andale Mono",1,12));
+        labelAMaterno.setForeground(new Color(255,0,0));
+        add(labelAMaterno);
+
+        txtAMaterno = new JTextField();
+        txtAMaterno.setBounds(25,334,150,25);
+        txtAMaterno.setBackground(new java.awt.Color(224,224,224));
+        txtAMaterno.setFont(new java.awt.Font("Andale Mono",1,14));
+        txtAMaterno.setForeground(new java.awt.Color(255,0,0));
+        add(txtAMaterno);
+
+        labelDepartamento = new JLabel("Selecciona el Departamento");
+        labelDepartamento.setBounds(220,188,180,25);
+        labelDepartamento.setFont(new Font("Andale Mono",1,12));
+        labelDepartamento.setForeground(new Color(255,255,255));
+        add(labelDepartamento);
+
+        comboDepartamento = new JComboBox();
+        comboDepartamento.setBounds(220,213,220,25);
+        comboDepartamento.setBackground(new java.awt.Color(224,224,224));
+        comboDepartamento.setFont(new java.awt.Font("Andale Mono",1,14));
+        comboDepartamento.setForeground(new java.awt.Color(255,0,0));
+        add(comboDepartamento);
+        comboDepartamento.addItem("");
+        comboDepartamento.addItem("Atencion al Cliente");
+        comboDepartamento.addItem("Departamento LOgistica");
+        comboDepartamento.addItem("Departamento de Gerencia");
+
+        labelAntiguedad = new JLabel("Selecciona la Antiguedad");
+        labelAntiguedad.setBounds(220,248,180,25);
+        labelAntiguedad.setFont(new Font("Andale Mono",1,12));
+        labelAntiguedad.setForeground(new Color(255,255,255));
+        add(labelAntiguedad);
+
+        comboAntiguedad = new JComboBox();
+        comboAntiguedad.setBounds(220,273,220,25);
+        comboAntiguedad.setBackground(new java.awt.Color(224,224,224));
+        comboAntiguedad.setFont(new java.awt.Font("Andale Mono",1,14));
+        comboAntiguedad.setForeground(new java.awt.Color(255,0,0));
+        add(comboAntiguedad);
+        comboAntiguedad.addItem("");
+        comboAntiguedad.addItem("1 año de Servicio");
+        comboAntiguedad.addItem("2 a 6 Años de Servicio");
+        comboAntiguedad.addItem("7 años o mas de Servicio");
+
+        labelResultado = new JLabel("Resultado del Calculo");
+        labelResultado.setBounds(220,307,180,25);
+        labelResultado.setFont(new Font("Andale Mono",1,12));
+        labelResultado.setForeground(new Color(255,255,255));
+        add(labelResultado);
+
+        textarea1 = new JTextArea();
+        textarea1.setEditable(false);
+        textarea1.setBackground(new Color(224,224,224));
+        textarea1.setFont(new Font("Andale Mono",1,11));
+        textarea1.setForeground(new Color(255,0,0));
+        textarea1.setText("\n  Aqui aparece el resultado del calculo de las vacaciones.");
+        scrollpane1 = new JScrollPane(textarea1);
+        scrollpane1.setBounds(220,333,385,90);
+        add(scrollpane1);
+
+        labelfooter = new JLabel("2021 the Coca-Cola Company  / Todos los derechos reservados");
+        labelfooter.setBounds(135,445,500,30);
+        labelfooter.setFont(new java.awt.Font("Andale Mono",1,12));
+        labelfooter.setForeground(new java.awt.Color(255,255,255));
+        add(labelfooter);
+
+               
+    }
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource()==miCalculo){
+
+        }
+        if(e.getSource()==miRojo){
+
+        }
+        if(e.getSource()==miNegro){
+
+        }
+        if(e.getSource()==miMorado){
+
+        }
+        if(e.getSource()==miNuevo){
+
+        }
+        if(e.getSource()==miSalir){
+
+        }
+        if(e.getSource()==miElCreador){
+
+        }
+    }
+    public static void main(String args[]) {
+        Principal ventaPrincipal = new Principal();
+        ventaPrincipal.setBounds(0,0,640,535);
+        ventaPrincipal.setVisible(true);
+        ventaPrincipal.setResizable(false);
+        ventaPrincipal.setLocationRelativeTo(null);
 
 
-
-
-        
     }
 
 }
