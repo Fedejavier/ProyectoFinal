@@ -94,13 +94,13 @@ public class Principal extends JFrame implements ActionListener{
         add(labelLogo);
 
         labelBienvenido = new JLabel("Bienvenido");
-        labelBienvenido.setBounds(200,30,300,50);
+        labelBienvenido.setBounds(350,30,300,50);
         labelBienvenido.setFont(new Font("Andale Mono",1,32));
         labelBienvenido.setForeground(new Color(255,255,255));
         add(labelBienvenido);
 
         labelTitle = new JLabel("Datos del Trabajador para el Calculo de Vacaciones");
-        labelTitle.setBounds(45,140,900,25);
+        labelTitle.setBounds(20,140,900,25);
         labelTitle.setFont(new Font("Andale Mono",1,24));
         labelTitle.setForeground(new Color(255,255,255));
         add(labelTitle);
@@ -121,7 +121,7 @@ public class Principal extends JFrame implements ActionListener{
         labelAPaterno = new JLabel("Apellido Paterno");
         labelAPaterno.setBounds(25,248,180,25);
         labelAPaterno.setFont(new Font("Andale Mono",1,12));
-        labelAPaterno.setForeground(new Color(255,0,0));
+        labelAPaterno.setForeground(new Color(255,255,255));
         add(labelAPaterno);
 
         txtAPaterno = new JTextField();
@@ -134,7 +134,7 @@ public class Principal extends JFrame implements ActionListener{
         labelAMaterno = new JLabel("Apellido Materno");
         labelAMaterno.setBounds(25,308,180,25);
         labelAMaterno.setFont(new Font("Andale Mono",1,12));
-        labelAMaterno.setForeground(new Color(255,0,0));
+        labelAMaterno.setForeground(new Color(255,255,255));
         add(labelAMaterno);
 
         txtAMaterno = new JTextField();
@@ -194,7 +194,7 @@ public class Principal extends JFrame implements ActionListener{
         scrollpane1.setBounds(220,333,385,90);
         add(scrollpane1);
 
-        labelfooter = new JLabel("2021 the Coca-Cola Company  / Todos los derechos reservados");
+        labelfooter = new JLabel("©2021 the Coca-Cola Company  / Todos los derechos reservados");
         labelfooter.setBounds(135,445,500,30);
         labelfooter.setFont(new java.awt.Font("Andale Mono",1,12));
         labelfooter.setForeground(new java.awt.Color(255,255,255));

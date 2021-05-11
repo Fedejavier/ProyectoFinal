@@ -9,11 +9,14 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
     private JButton boton1, boton2;
     private JScrollPane scrollpane1;
     private JTextArea textarea1;
+    String nombre = "";
 
     public Licencia(){
         setLayout(null);
         setTitle("Licencia de Uso");
         setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
+        Bienvenida ventaBienvenida = new Bienvenida();
+        nombre = ventaBienvenida.texto;
 
         label1 = new JLabel("TERMINOS Y CONDICIONES");
         label1.setBounds(215,5,200,30);
@@ -29,7 +32,7 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
         add(scrollpane1);
         textarea1.setText("\n\n          TERMINOS Y CONDICIONES");
 
-        box1 = new JCheckBox("Yo Acepto");
+        box1 = new JCheckBox("Yo "+ nombre +" Acepto");
         box1.setBounds(10,250,300,30);
         box1.addChangeListener(this);
         add(box1);
@@ -53,14 +56,38 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
         
     }
     public void stateChanged (ChangeEvent e){
+        if(box1.isSelected()==true){
+            boton1.setEnabled(true);
+            boton2.setEnabled(false);
+        }else{
+            boton1.setEnabled(false);
+            boton2.setEnabled(true);
+        }
 
     }
     public void actionPerformed(ActionEvent e){
+        if(e.getSource()==boton1){
+            Principal ventaPrincipal = new Principal();
+            ventaPrincipal.setBounds(0,0,640,535);
+            ventaPrincipal.setVisible(true);
+            ventaPrincipal.setResizable(false);
+            ventaPrincipal.setLocationRelativeTo(null);
+            this.setVisible(false);
+
+        }else if(e.getSource()==boton2){
+            Bienvenida ventanabienvenida = new Bienvenida();
+            ventanabienvenida.setBounds(0,0,370,450);
+            ventanabienvenida.setVisible(true);
+            ventanabienvenida.setResizable(false);
+            ventanabienvenida.setLocationRelativeTo(null);
+            this.setVisible(false);
+
+        }
 
     }
     public static void main(String args[]) {
         Licencia ventanalicencia = new Licencia();
-        ventanalicencia.setBounds(0,0,600,360);
+        ventanalicencia.setBounds(0,0,620,400);
         ventanalicencia.setVisible(true);
         ventanalicencia.setResizable(false);
         ventanalicencia.setLocationRelativeTo(null);
