@@ -12,12 +12,15 @@ public class Principal extends JFrame implements ActionListener{
     private JComboBox comboDepartamento, comboAntiguedad;
     private JScrollPane scrollpane1;
     private JTextArea textarea1;
+    String nombreAdministrador = "";
 
     public Principal(){
         setLayout(null);
         setTitle("Pantalla principal");
         getContentPane().setBackground(new Color(255,0,0));
         setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
+        Bienvenida ventanaBienvenida = new Bienvenida();
+        nombreAdministrador = ventanaBienvenida.texto;
         
         mb = new JMenuBar();
         mb.setBackground(new Color(255,0,0));
@@ -93,7 +96,7 @@ public class Principal extends JFrame implements ActionListener{
         labelLogo.setBounds(5,5,250,100);
         add(labelLogo);
 
-        labelBienvenido = new JLabel("Bienvenido");
+        labelBienvenido = new JLabel("Bienvenido " + nombreAdministrador);
         labelBienvenido.setBounds(350,30,300,50);
         labelBienvenido.setFont(new Font("Andale Mono",1,32));
         labelBienvenido.setForeground(new Color(255,255,255));
@@ -204,6 +207,19 @@ public class Principal extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==miCalculo){
+            String nombreTrabajador = txtNombreTrabajador.getText();
+            String AP = txtAPaterno.getText();
+            String AM = txtAMaterno.getText();
+            String Departamento = comboDepartamento.getSelectedItem().toString();
+            String Antiguedad = comboAntiguedad.getSelectedItem().toString();
+
+            if(nombreTrabajador.equals("") || AP.equals("") || AM.equals("") || Departamento.equals("") || Antiguedad.equals("")){
+                JOptionPane.showMessageDialog(null, "Debes de llenar todos los campos");
+            }else {
+                if(Departamento.equals("Atencion al Cliente")){
+                    
+                }
+            }
 
         }
         if(e.getSource()==miRojo){
