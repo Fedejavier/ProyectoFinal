@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Principal extends JFrame implements ActionListener{
+public class Principal extends JFrame implements ActionListener {
 
     private JMenuBar mb;
     private JMenu menuOpciones, menuCalcular, menuAcercaDe, menuColorFondo;
@@ -161,7 +161,7 @@ public class Principal extends JFrame implements ActionListener{
         add(comboDepartamento);
         comboDepartamento.addItem("");
         comboDepartamento.addItem("Atencion al Cliente");
-        comboDepartamento.addItem("Departamento LOgistica");
+        comboDepartamento.addItem("Departamento Logistica");
         comboDepartamento.addItem("Departamento de Gerencia");
 
         labelAntiguedad = new JLabel("Selecciona la Antiguedad");
@@ -177,9 +177,9 @@ public class Principal extends JFrame implements ActionListener{
         comboAntiguedad.setForeground(new java.awt.Color(255,0,0));
         add(comboAntiguedad);
         comboAntiguedad.addItem("");
-        comboAntiguedad.addItem("1 año de Servicio");
-        comboAntiguedad.addItem("2 a 6 Años de Servicio");
-        comboAntiguedad.addItem("7 años o mas de Servicio");
+        comboAntiguedad.addItem("1 año de servicio");
+        comboAntiguedad.addItem("2 a 6 años de servicio");
+        comboAntiguedad.addItem("7 años o mas de servicio");
 
         labelResultado = new JLabel("Resultado del Calculo");
         labelResultado.setBounds(220,307,180,25);
@@ -217,27 +217,74 @@ public class Principal extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Debes de llenar todos los campos");
             }else {
                 if(Departamento.equals("Atencion al Cliente")){
-                    
+                    if(Antiguedad.equals("1 año de servicio")){
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 6 dias de Vacaciones.");
+                        
+                    }if(Antiguedad.equals("2 a 6 años de servicio")) {
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 14 dias de Vacaciones.");
+
+                    }if(Antiguedad.equals("7 años o mas de servicio")){
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 20 dias de Vacaciones.");
+                        
+                    }
+                }if(Departamento.equals("Departamento Logistica")){
+                    if(Antiguedad.equals("1 año de servicio")){
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 7 dias de Vacaciones.");
+                        
+                    }if(Antiguedad.equals("2 a 6 años de servicio")) {
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 15 dias de Vacaciones.");
+
+                    }if(Antiguedad.equals("7 años o mas de servicio")){
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 22 dias de Vacaciones.");
+                        
+                    }
+                }if(Departamento.equals("Departamento de Gerencia")){
+                    if(Antiguedad.equals("1 año de servicio")){
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 10 dias de Vacaciones.");
+                        
+                    }if(Antiguedad.equals("2 a 6 años de servicio")) {
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 20 dias de Vacaciones.");
+
+                    }if(Antiguedad.equals("7 años o mas de servicio")){
+                        textarea1.setText("\n El Trabajador "+ nombreTrabajador +"" + AP + " " + AM + "\n quien labora en " + Departamento + " con " + Antiguedad + "\n recibe 30 dias de Vacaciones.");
+                        
+                    }
                 }
             }
 
         }
         if(e.getSource()==miRojo){
+            getContentPane().setBackground(new Color(255,0,0));
 
         }
         if(e.getSource()==miNegro){
+            getContentPane().setBackground(new Color(0,0,0));
 
         }
         if(e.getSource()==miMorado){
+            getContentPane().setBackground(new Color(51,0,51));
 
         }
         if(e.getSource()==miNuevo){
+            txtNombreTrabajador.setText("");
+            txtAPaterno.setText("");
+            txtAMaterno.setText("");
+            comboDepartamento.setSelectedIndex(0);
+            comboAntiguedad.setSelectedIndex(0);
+            textarea1.setText("\n Aqui aparece el resultado del calculo de las vacaciones.");
 
         }
         if(e.getSource()==miSalir){
+            Bienvenida ventanabienvenida = new Bienvenida();
+            ventanabienvenida.setBounds(0,0,370,450);
+            ventanabienvenida.setVisible(true);
+            ventanabienvenida.setResizable(false);
+            ventanabienvenida.setLocationRelativeTo(null);
+            this.setVisible(false);
 
         }
         if(e.getSource()==miElCreador){
+            JOptionPane.showMessageDialog(null, "Desarrollado por Federico Villalba.");
 
         }
     }
@@ -251,4 +298,5 @@ public class Principal extends JFrame implements ActionListener{
 
     }
 
+  
 }

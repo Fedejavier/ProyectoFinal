@@ -82,4 +82,3 @@ public class Bienvenida extends JFrame implements ActionListener{
 
     }
 }
-0  00 
